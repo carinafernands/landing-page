@@ -45,10 +45,10 @@ function loadComponent(id, file, cssFile = null, jsFile = null){
 }
 
 document.addEventListener("DOMContentLoaded", function(){
-    loadComponent("header", "components/header/header.html");
-    loadComponent("about", "components/about/about.html");
-    loadComponent("benefits", "components/benefits/benefits.html");
+    loadComponent("header", "components/header/header.html", "components/header/header.css", "components/header/header.js");
+    loadComponent("about", "components/about/about.html", "components/about/about.css", "components/about/about.js");
+    loadComponent("benefits", "components/benefits/benefits.html", "components/benefits/benefits.css","components/benefits/benefits.js");
     loadComponent("options", "components/options/options.html", "components/options/options.css", "components/options/options.js");
-    loadComponent("products", "components/products/products.html");
-    loadComponent("contact", "components/contact/contact.html");
+    loadComponent("products", "components/products/products.html", "components/products/products.css", "components/products/products.js");
+    loadComponent("contact", "components/contact/contact.html", "components/contact/contact.css", "components/contact/contact.js");
 });
