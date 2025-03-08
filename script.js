@@ -1,4 +1,4 @@
-function loadComponent(id, file){
+function loadComponent(id, file, cssFile = null, jsFile = null){
     fetch(file)
     .then(response => response.text())
     .then(data => {
@@ -17,6 +17,28 @@ function loadComponent(id, file){
             script.src = jsFile;
             script.defer = true;
             document.body.appendChild(script);
+            script.onload = function() {
+                    // Reaplica o código que gerencia o clique dos botões
+                    const buttons = document.querySelectorAll(".option-btn");
+
+                    buttons.forEach(button => {
+                        button.addEventListener("click", function() {
+                            const target = this.getAttribute("data-target");
+                            const content = document.getElementById(target);
+
+                            document.querySelectorAll(".option-content").forEach(item => {
+                                if(item !== content){
+                                    item.style.display = "none";
+                                }else{
+                                    item.style.display = "visible";
+                                }
+                            });
+
+                            content.style.display = content.style.display === "block" ? "none" : "block";
+                        });
+                    });
+                
+            };
         }
     })
     .catch(error => console.error(`Erro ao carregar ${file}:`, error));
@@ -26,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function(){
     loadComponent("header", "components/header/header.html");
     loadComponent("about", "components/about/about.html");
     loadComponent("benefits", "components/benefits/benefits.html");
-    loadComponent("options", "components/options/options.html");
+    loadComponent("options", "components/options/options.html", "components/options/options.css", "components/options/options.js");
     loadComponent("products", "components/products/products.html");
     loadComponent("contact", "components/contact/contact.html");
 });

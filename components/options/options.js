@@ -2,18 +2,19 @@ document.addEventListener("DOMContentLoaded", function() {
     const buttons = document.querySelectorAll(".option-btn");
 
     buttons.forEach(button => {
-    button.addEventListener("click", function(){
-        const target = this.getAttribute("data-target");
-        const content = document.getElementById(target);
+        button.addEventListener("click", function() {
+            const target = this.getAttribute("data-target");
+            const content = document.getElementById(target);
 
-        if(content.style.display === "block"){
-            content.style.display = "none";
-        }else{
-            document.querySelectorAll(".option-content").forEach(item =>{
-                item.style.display = "none";
+            document.querySelectorAll(".option-content").forEach(item => {
+                if(item !== content){
+                    item.style.display = "none";
+                }else{
+                    item.style.display = "visible";
+                }
             });
-            content.style.display = "block";
-        }
-    });    
+
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        });
     });
-});
+})
