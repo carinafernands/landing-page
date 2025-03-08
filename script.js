@@ -18,7 +18,6 @@ function loadComponent(id, file, cssFile = null, jsFile = null){
             script.defer = true;
             document.body.appendChild(script);
             script.onload = function() {
-                    // Reaplica o código que gerencia o clique dos botões
                     const buttons = document.querySelectorAll(".option-btn");
 
                     buttons.forEach(button => {
