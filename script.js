@@ -11,7 +11,6 @@ function loadComponent(id, file, cssFile = null, jsFile = null){
             document.head.appendChild(link);
         }
 
-        // Carregar o JS correspondente
         if (jsFile) {
             let script = document.createElement("script");
             script.src = jsFile;
