@@ -1,0 +1,49 @@
+.options {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+h2 {
+    font-size: 28px;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.options-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.option {
+    width: 250px;
+    text-align: center;
+}
+
+.option-btn {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    width: 100%;
+}
+
+.option-btn:hover {
+    background-color: #388E3C;
+}
+
+.option-content {
+    background: white;
+    color: #333;
+    font-size: 16px;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+    display: none;
+}
